@@ -1,0 +1,11 @@
+# Exclude these files from the git repo
+var/www/php/twitteroauth-credentials.php
+var/www/php/db-credentials.php
+var/www/cgi1/json/*.json
+var/www/cgi1/json/training/*.json
+ 
+# Hidden system files
+*.DS_Store
+*[Tt]humbs.db
+*.Trashes
+ 

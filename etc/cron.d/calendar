@@ -1,0 +1,1 @@
+0,30 * * * *      root /usr/bin/php /var/www/cgi-bin/cacheCalendarJson.php
