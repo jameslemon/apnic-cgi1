@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../php/twitteroauth-master/twitteroauth/twitteroauth.php"); //Path to twitteroauth library
+require_once("../php/lib/twitteroauth-master/twitteroauth/twitteroauth.php"); //Path to twitteroauth library
 require_once("../php/twitteroauth-credentials.php"); // Twitter keys, tokens, secrets.
  
 $twitteruser = "apnic";
