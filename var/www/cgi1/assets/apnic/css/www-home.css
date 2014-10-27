@@ -1,0 +1,472 @@
+/* ==========================================================================
+   Homepage styles
+   ========================================================================== */
+
+#homepage-container .row > div{
+    padding-left:0;
+    padding-right:0;
+}
+
+/* Top row of the homepage */
+#homepage-container #top-row {
+    /* background: #00ade6; */
+}
+#homepage-container #top-row #carousel{
+    background: #fff;
+}
+#homepage-container #top-row #whois{
+    background: #00ade6;
+}
+
+/* Middle row of the homepage */
+#homepage-container #middle-row,
+#homepage-container #middle-row .quick-links{
+    background: #f4f4f4;
+}
+#homepage-container #middle-row #news{
+    background:white;
+}
+#homepage-container #middle-row .quick-links h2{
+    color: #009dd4;
+    margin-top:0.5em;
+    margin-left: 0.75em;
+}
+.quick-links ul{
+    list-style: none;
+    margin-left: 0;
+    padding: 0.5em 0 0.5em 0;
+}
+.quick-links li{
+    margin-left: 1.5em;
+}
+.quick-links li a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+}
+.quick-links li a:before{
+    color: #009dd4;
+    content: '▶';
+    font-size: 0.8em;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+.quick-links li a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.carousel-control{
+    width: 3%;
+}
+
+.carousel-control.left,
+.carousel-control.right{
+    background-image: none;
+}
+
+/* ==========================================================================
+   News Box (using bootstrap accordion)
+   ========================================================================== */
+#news .panel-group{
+    margin-bottom:0;
+}
+#news .panel-group,
+#news .panel-heading,
+#news .panel,
+#news .panel-body{
+    border-radius: 0;
+    border: 0;
+    margin: 0;
+}
+#news .panel-body{
+    background:#00a2da;
+}
+#news .panel-heading,
+#news .panel-default > .panel-heading {
+    background-color: #00419f;
+    border-color: #00419f;
+    color: #fff;
+}
+#news .panel-heading a{outline: none;}
+#news .panel-title{
+    font-size: 24px;
+    padding: 0.5em 0.75em;
+}
+#news .panel-heading{
+    padding: 0;
+}
+#news .panel-body h3{
+    margin-top:0;
+    margin-bottom:0.2em;
+    font-size: 16px;
+    color: white;
+}
+#news .panel-body h3#latest-blog-post-2,
+#news .panel-body h3#latest-blog-post-3{
+    margin-top: 1em;
+}
+#news .panel-body h3 a{
+    color: white;
+}
+#news .panel-body h4{
+   margin-top:0;
+   font-size: 14px;
+}
+#news .panel-body a,
+#news .panel-body p{
+   color: white;
+}
+#news .panel-body{
+    min-height: 220px;/*150px;*//*220px;*/
+}
+
+/* ==========================================================================
+   Whois Box (based on see also box)
+   ========================================================================== */
+#whois .box h2{
+    color: white;
+    margin: 0;
+    padding: 0.5em 0.75em;
+    overflow: hidden;
+    background-color: #00419f !important;
+}
+#whois .box .box-body{
+    background: #00ade6;
+    padding: 0.5em; 
+}
+#whois .box a{
+    color: white;
+}
+
+#whois input.search{
+    border: 1px solid #808080;
+    height: 25px;
+    line-height: 25px;
+    padding-left: 10px;
+    margin: 0;
+    float:left;
+}
+#whois input.search:focus,#whois input.search:hover{
+    border-color: #008cbd;
+}
+#whois input.go{
+    border: 1px solid #00419f;
+    background: #00419f;
+    color: white;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0 8px;
+    float:left;
+}
+#whois input.go:focus,#whois input.go:hover{
+    border-color: #008cbd;
+    background: #008cbd;
+}
+#whois form{overflow:hidden;margin-left:10px;margin-top:1em;margin-bottom:0.5em;}
+
+#whois .text-right{margin-right:0.7em;}
+
+#whois-more-toggle.collapsed .glyphicon-chevron-down{display:none;}
+#whois-more-toggle.collapsed .glyphicon-chevron-up{display:inherit;}
+#whois-more-toggle .glyphicon-chevron-down{display:inherit;}
+#whois-more-toggle .glyphicon-chevron-up{display:none;}
+
+#whois-more-toggle strong{float:left;}
+
+#whois-more-toggle{
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    padding-left:1em;
+    overflow:hidden;
+    height:18px;
+    margin-top:0.2em;
+}
+#whois-more-toggle .glyphicon{margin-right: 0.5em;float:left;}
+
+#whois-more{clear:both;}
+
+@media (min-width: 768px){
+    #whois{min-height: 190px;}
+    #whois input.search{width:220px;}
+}
+@media (max-width: 1199px){
+    #whois{min-height: 158px !important;}
+    #whois input.search{width:165px;}
+}
+
+/* ==========================================================================
+   Adverts
+   ========================================================================== */
+
+.advert{
+    height: 80px;
+    display: inline-block;
+    background-color: #01a2d9;
+    color: white !important;
+    overflow: hidden;
+}
+.advert:hover{
+    background-color: #00419f;
+    transition: background-color 500ms ease-out;
+}
+.advert strong{
+    font-weight: normal;
+    position: absolute;
+    display: inline-block;
+    width: 183px;
+    height: 80px;
+    top:0;
+    right: 0;
+}
+.advert:hover strong{
+    background-image: none;
+    transition: background-image 500ms ease-out;
+}
+
+@media(max-width:991px){
+    .advert{
+        width:100% !important;
+        border-bottom: 5px solid white;
+    }
+}
+ 
+#adverts-1 .advert{
+    width: 25%;
+    float:left;
+    border-right: 5px solid white;
+}
+#adverts-2 .advert{
+    width: 100%;
+    float:left;
+}
+
+
+
+/* Advert 1 = Become a Member */
+#advert-1{
+    position: relative;
+}
+#advert-1 span{
+    position: absolute;
+    top:50%;
+    display: block;
+    height: 3em;
+    width: 6em;
+    margin-top: -1.5em;
+    margin-left: 1em;
+    font-size: 17px;
+}
+#advert-1 strong{
+    background-position: 0 -83px;
+}
+#advert-1 b{
+    position: absolute;
+    right: 0;
+    width: 109px;
+    height: 80px;
+    display: block;
+    background-position: 0 -110px;
+}
+@media(min-width:992px) and (max-width:1199px){
+    #advert-1 b{
+        width: 77px;
+    }
+}
+
+/* Advert 2 = Support ISIF */
+#advert-2{
+    position: relative;
+}
+#advert-2 span{
+    position: absolute;
+    bottom: 0;
+    display: block;
+
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 0.5em;
+
+    font-size: 14px;
+}
+#advert-2 strong{
+    background-position: -188px -83px;
+}
+#advert-2 img{
+    position: absolute;
+    top: 10px;
+    left:15px;
+    display:block;
+    
+    width: 177px;
+    height: 33px;
+}
+@media(min-width:992px) and (max-width:1199px){
+    #advert-2 img{
+        width: 150px;
+        height: 28px;
+    }
+}
+
+/* Advert 3 = NRO */
+#advert-3{
+    position: relative;
+}
+#advert-3 > span{
+    position: absolute;
+    top:50%;
+    display: block;
+    height: 3em;
+    width: 8em;
+    margin-top: -1.5em;
+    margin-left: 1em;
+
+    font-size: 14px;
+}
+#advert-3 > span span{display: none}
+#advert-3 strong{
+    background-position: -376px -83px;
+    left: 0;
+}
+
+#advert-3 b{
+    display: inline-block;
+    width: 100px;
+    height: 46px;
+ 
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    margin-top:-23px;
+
+    margin-right: 5px;
+    background-position:  -150px -110px;
+}
+#advert-3 b span{display: none;}
+
+@media(min-width:992px) and (max-width:1199px){
+    #advert-3 span{
+        width: 66px;
+        height: 80px;
+
+        top:0;
+        margin-top:10px;
+        margin-left:7px;
+    }
+    #advert-3 b{
+        margin-right: 3px;
+    }
+}
+
+/* Advert 4 = icons */
+#advert-4{
+    position: relative;
+}
+#advert-4 span{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    /*width: 3em;*/
+    height: 3em;
+    margin-top: -1.5em;
+    font-size: 22px;
+    margin-left: 0.5em;
+}
+#advert-4 strong{
+    background-position: -564px -83px;
+}
+
+/* Advert 5 = Helpdesk */
+#advert-5{
+    position: relative;
+}
+#advert-5 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 7px;
+    text-align: center;
+}
+#advert-5 em{
+    position: absolute;
+    top: 50%;
+    height: 1.5em;
+    right: 0;
+    width: 6em;
+    text-align: right;
+    margin-right: 14px;
+    margin-top: -0.75em;
+    font-size: 24px;
+    font-style: normal;
+}
+#advert-5 strong{
+    background-position: -752px -83px;
+    width: 216px;
+}
+#advert-5 b{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    position: absolute;
+    background-position: -300px -110px;
+    top:0;
+    left:5px;
+}
+@media(min-width:1200px){
+    #advert-5 b{
+        left: 15px;
+    }
+}
+
+/* ==========================================================================
+   Faux Spacing
+   ========================================================================== */
+#homepage-container #top-row{
+    border-top: 5px solid white;
+}
+#homepage-container #top-row,
+#homepage-container #middle-row{
+    border-bottom: 5px solid white;
+}
+#homepage-container #middle-row .quick-links{
+    border-right: 5px solid white; 
+}
+#homepage-container #carousel{
+    border-right: 5px solid white;
+}
+#news .panel-group .panel:first-child,
+#news .panel-group .panel:first-child + .panel{
+    border-bottom: 5px solid white;
+}
+#homepage-container #bottom-row{
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   Mobile tidy up of faux spacing
+   ========================================================================== */
+@media (max-width: 991px) {
+    #homepage-container #carousel {
+        border-right: 0px !important;
+        border-bottom: 5px solid white !important;
+    }
+    #whois input.search,
+    #whois input.go{
+        line-height: 35px;
+        height: 35px;
+    }
+    #whois input.search{
+        width: 80%;
+    }
+    #whois input.go{
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}

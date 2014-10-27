@@ -1,0 +1,57 @@
+.sub-page-link h4, .sub-page-link-hover h4{
+
+    margin-top:0 !important;
+}
+.sub-page-link, .sub-page-link-hover {
+    border-top: 1px solid #D5D2D2;
+    height: 1%;
+    margin-bottom: 15px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.sub-page-link a.img-link, .sub-page-link-hover a.img-link {
+    background: url("/__data/assets/image/0007/70/apnic-logo.jpg") no-repeat scroll center center #FFFFFF;
+    border: 1px solid #C8C6C8;
+    float: left;
+    height: 77px;
+    margin-right: 10px;
+    margin-top: 3px;
+    width: 127px;
+}
+.sub-page-link a.img-link img, .sub-page-link-hover a.img-link img {
+    height: 75px;
+    width: 125px;
+}
+.sub-page-link p, .sub-page-link-hover p {
+    margin-bottom: 0;
+}
+.sub-page-link .text, .sub-page-link-hover .text {
+    padding-left: 140px;
+}
+
+@media (max-width: 600px) {
+    .sub-page-link .text, .sub-page-link-hover .text {
+        padding-left: 0px;
+        padding-top: 10px;
+        clear: left;
+    }
+}
+
+/* ==========================================================================
+    Policy proposals. Override the table class "proposal" to be like the 
+    Twitter Bootstrap class "table". Also make the first cell a bit wider.
+   ========================================================================== */
+.proposals{
+    margin-bottom: 20px;
+    width: 100%;
+}
+.proposals > thead > tr > th, .proposals > tbody > tr > th, .proposals > tfoot > tr > th, .proposals > thead > tr > td, .proposals > tbody > tr > td, .proposals > tfoot > tr > td {
+    border-top: 1px solid #DDDDDD;
+    line-height: 1.42857;
+    padding: 8px;
+    vertical-align: top;
+}
+.proposals > tbody > tr > td:first-child{
+    width: 20%;
+}
