@@ -1,5 +1,5 @@
 /* ==========================================================================
-    APNIC Website Main Stylsheet.
+    APNIC Simple Stylsheet.
    ========================================================================== */
 
 /* No Javascript stuff */
@@ -187,3 +187,5 @@ h1{
 .theme-popup #main-content{
     min-height: 500px; 
 }
+
+
