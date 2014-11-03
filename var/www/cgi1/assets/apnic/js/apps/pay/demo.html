@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]> <html class="no-js ie ie9" lang="en"> <![endif]-->
+<!--[if IE 10 ]> <html class="no-js ie ie10" lang="en"> <![endif]-->
+<!--[if IE 11 ]> <html class="no-js ie ie11" lang="en"> <![endif]-->
+<!--[if (gt IE 11)|!(IE)]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>APNIC Payment Gateway | APNIC</title>
+
+        <!-- Metadata -->
+        <meta name="description" content="Pay your APNIC invoices online.">
+
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@apnic">
+        <meta name="twitter:title" content="APNIC Payment Gateway">
+        <meta name="twitter:description" content="Pay your APNIC invoices online.">
+        <!-- Twitter Summary card images must be at least 200x200px -->
+        <meta name="twitter:image" content="https://cgi1.apnic.net/assets/apnic/img/apnic-stamp-blue-240.jpg">
+
+        <!-- Open Graph data -->
+        <meta property="og:title" content="APNIC Payment Gateway">
+        <meta property="og:type" content="article">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="https://cgi1.apnic.net/assets/apnic/img/apnic-stamp-blue-240.jpg">
+        <meta property="og:description" content="Pay your APNIC invoices online.">
+        <meta property="og:site_name" content="APNIC">
+
+        <!-- RSS -->
+        <link rel="alternate" type="application/rss+xml" title="APNIC Blog" href="https://blog.apnic.net/feed/">
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="https://cgi1.apnic.net/assets/apnic/img/favicon.ico">
+
+        <!-- CSS Core -->
+        <link href="https://cgi1.apnic.net/assets/lib/bootstrap-v3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cgi1.apnic.net/assets/lib/font-awesome-v4/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://cgi1.apnic.net/assets/apnic/css/simple.css" rel="stylesheet">
+
+        <style type="text/css">
+            h1{ color: #002598; }
+            .form-control-feedback { top: 29px; }
+            .has-success .form-control { border-color: #6a9703; }
+        </style>
+        <!-- IE Support -->
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="https://cgi1.apnic.net/assets/lib/js/html5shiv.min.js"></script>
+        <script src="https://cgi1.apnic.net/assets/lib/js/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- JS Core -->
+        <script src="https://cgi1.apnic.net/assets/lib/js/jquery/jquery-1.11.1.min.js"></script>
+        <script src="https://cgi1.apnic.net/assets/lib/js/underscore-min.js"></script>
+        <script src="https://cgi1.apnic.net/assets/lib/bootstrap-v3/js/bootstrap.min.js"></script>
+        <script src="https://cgi1.apnic.net/assets/apnic/js/glyph.js"></script>
+        <script>$('html').removeClass('no-js');</script>
+
+    </head>
+
+    <body id="top" class="theme-popup theme-lightgreen" data-theme-colour="lightgreen">
+
+        <!-- Banner -->
+        <div class="container">
+            <div id="banner">
+                <a href="https://www.apnic.net/" title="APNIC - Home"><img src="https://cgi1.apnic.net/assets/apnic/img/apnic-logotype-200x55.png" alt="APNIC"></a>
+                <div id="glyph" class="apnic-sprite apnic-sprite-glyphs hidden-print"></div>
+                <div class="apnic-sprite apnic-sprite-icons" id="bg-glyphs"></div>
+            </div>
+        </div><!-- /.container -->
+
+        <div class="container">
+            <div class="row">
+                 <div class="col-sm-12" id="main-content">
+                     <h1><span class="fa fa-lock"></span> APNIC Payment Gateway</h1>
+<!-- ######################## content starts here ######################## -->
+
+
+<!-- ######################## content ends here ######################## -->
+		
+                 </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+
+        <!-- Footer content -->
+        <div class="container">
+            <div class="row" id="footer">
+                <div class="col-sm-3" id="copyright-stamp">
+                    © APNIC | <a href='https://www.apnic.net/privacy' target="_blank">Privacy</a>
+                </div>
+            </div>
+        </div><!-- /.container -->
+
+       <div class="container js-off" id="js-warning">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-danger">
+                    <div class="panel-heading">
+                      <h3 class="panel-title">Javascript disabled</h3>
+                    </div>
+                    <div class="panel-body">
+                      Please re-enable javascript, or <a href='https://www.apnic.net/helpdesk'>contact helpdesk</a> for support.
+                    </div>
+                  </div>
+                </div>
+            </div>
+       </div><!-- /.container -->
+
+
+<!-- ######################## templates start here ######################## -->
+<!-- ######################################################################
+     The implementation of these is at the discretion of the developer. 
+     The use of javascript / underscore is purely for convenience.
+     ###################################################################### -->
+<script type="text/template" id="page1">
+<h2>Your Details</h2>
+<form role="form">
+  <input type="hidden" id="currency" name="currency" value=""/>
+  <input type="hidden" id="amount" name="amount" value=""/>
+  <div class="form-group">
+    <label for="apnicAccountName">APNIC account name</label>
+    <input type="text" class="form-control" id="apnicAccountName" placeholder="E.g. SPARKYNET-ID" name="accountno"<% if(app.hasValue('accountName')){%> value="{{app.accountName}}" <%} %> >
+  </div>
+
+  <div class="form-group">
+    <label for="invoiceNumber">Invoice number</label>
+    <input type="text" class="form-control" id="invoiceNumber" placeholder="" name="tranid"<% if(app.hasValue('invoiceNumber')){%> value="{{app.invoiceNumber}}" <%} %> >
+    <p class="help-block">Enter the number of the invoice you wish to pay.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="emailAddress">Your email address</label>
+    <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="" <% if(app.hasValue('email')){%> value="{{app.email}}" <%} %>>
+    <p class="help-block">APNIC will send you payment confirmation to this address.</p>
+  </div>
+
+<h2><span class="fa fa-credit-card" id="credit-card-type"></span> Payment Method</h2>
+<div class="row">
+  <div class="col-sm-12">
+  <div class="form-group">
+    <label for="cardNumber">Card number</label>
+    <input type="text" class="form-control" id="cardNumber" placeholder="" <% if(app.hasValue('ccnumber')){%> value="{{app.ccnumber}}" <%} %> >
+    <span></span>
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-7">
+  <div class="form-group">
+    <label for="cardName">Name on card</label>
+    <input type="text" class="form-control" id="cardName" placeholder="" <% if(app.hasValue('ccname')){%> value="{{app.ccname}}" <%} %> >
+  </div>
+  </div>
+  <div class="col-sm-3 col-xs-6">
+  <div class="form-group">
+    <label for="expiryDate">Expiry Date</label>
+    <input type="text" id="expiryDate" name="expiryDate" class="form-control" placeholder="MM/YYYY" <% if(app.hasValue('ccexpiry')){%> value="{{app.ccexpiry}}" <%} %> >
+  </div>
+  </div>
+  <div class="col-sm-2 col-xs-6">
+  <div class="form-group">
+    <label for="cvvCode">CVV Code</label>
+    <input type="text" id="CVV" name="CVV" class="form-control" placeholder="" <% if(app.hasValue('ccsecuritycode')){%> value="{{app.ccsecuritycode}}" <%} %> >
+    <p class="help-block"><a href='#cvv'>What's this?</a></p>
+  </div>
+  </div>
+</div>
+<hr/>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"<% if(app.hasValue('agree')){ %>checked <% } %>> <span>I agree to APNIC's <a href='#terms'>Terms and Conditions</a> for online credit card payments</span>
+    </label>
+  </div>
+  <hr/>
+
+  <p><a href="#confirmation" class="btn btn-primary" id="next">Next <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+</form>
+</script>
+
+<script type="text/template" id="page2">
+<h2><em>Confirmation</em></h2>
+<h2>Your Details</h2>
+<form role="form">
+  <input type="hidden" id="currency" name="currency" value=""/>
+  <input type="hidden" id="amount" name="amount" value=""/>
+  <div class="form-group">
+    <label for="apnicAccountName">APNIC account name</label>
+    <input type="text" class="form-control" id="apnicAccountName" name="accountno"<% if(app.hasValue('accountName')){%> value="{{app.accountName}}" readonly<%} %> >
+  </div>
+
+  <div class="form-group">
+    <label for="invoiceNumber">Invoice number</label>
+    <input type="text" class="form-control" id="invoiceNumber" name="tranid"<% if(app.hasValue('invoiceNumber')){%> value="{{app.invoiceNumber}}" readonly<%} %> >
+  </div>
+
+  <div class="row">
+  <div class="col-sm-2">
+    <p><strong>Currency</strong></p>
+    <p><% if(app.hasValue('currency')){%>{{app.currency}}<%} %></p>
+  </div>
+  <div class="col-sm-6">
+    <p><strong>Amount</strong></p>
+    <p><% if(app.hasValue('amount')){%>{{app.amount}}<%} %></p>
+  </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="emailAddress">Your email address</label>
+    <input type="email" class="form-control" id="emailAddress" name="emailAddress" placeholder="" <% if(app.hasValue('email')){%> value="{{app.email}}" readonly<%} %>>
+  </div>
+
+<h2><span class="fa fa-credit-card fa-cc-{{app.cc_field.cardtype}}" id="credit-card-type"></span> Payment Method</h2>
+<div class="row">
+  <div class="col-sm-12">
+  <div class="form-group">
+    <label for="cardNumber">Card number</label>
+    <input type="text" class="form-control" id="cardNumber" <% if(app.hasValue('ccnumber')){%> value="{{app.ccnumber}}" readonly<%} %> >
+    <span></span>
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-7">
+  <div class="form-group">
+    <label for="cardName">Name on card</label>
+    <input type="text" class="form-control" id="cardName" <% if(app.hasValue('ccname')){%> value="{{app.ccname}}" readonly<%} %> >
+  </div>
+  </div>
+  <div class="col-sm-3 col-xs-6">
+  <div class="form-group">
+    <label for="expiryDate">Expiry Date</label>
+    <input type="text" id="expiryDate" name="expiryDate" class="form-control" placeholder="MM/YYYY" <% if(app.hasValue('ccexpiry')){%> value="{{app.ccexpiry}}" readonly<%} %> >
+  </div>
+  </div>
+  <div class="col-sm-2 col-xs-6">
+  <div class="form-group">
+    <label for="cvvCode">CVV Code</label>
+    <input type="text" id="CVV" name="CVV" class="form-control" placeholder="" <% if(app.hasValue('ccsecuritycode')){%> value="{{app.ccsecuritycode}}" readonly<%} %> >
+  </div>
+  </div>
+</div>
+
+
+  <hr/>
+    <p>✔ I agree to APNIC's Terms and Conditions for online credit card payments</p>
+
+  <hr/>
+  <p><a class="btn btn-default" href="#"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
+  <a href="#success" class="btn btn-primary" id="paynow">Pay Now <span class="fi-lock"></span></a></p>
+</form>
+</script>
+
+<script type="text/template" id="page3">
+<h2><em>Thank you!</em></h2>
+<p>Your payment has been processed.</p>
+<p>APNIC has sent you a payment confirmation to <em><% if(app.hasValue('email')){%>{{app.email}}<%}%></em>.</p>
+<hr/>
+
+<h2>Your Details</h2>
+<form role="form">
+  <div class="form-group">
+    <p><strong>APNIC account name</strong></p>
+    <p><% if(app.hasValue('accountName')){%>{{app.accountName}}<%} %></p>
+  </div>
+
+  <div class="form-group">
+    <p><strong>Invoice number</strong></p>
+    <p><% if(app.hasValue('invoiceNumber')){%>{{app.invoiceNumber}}<%} %></p> 
+  </div>
+
+  <div class="row">
+  <div class="col-sm-2">
+    <p><strong>Currency</strong></p>
+    <p><% if(app.hasValue('currency')){%>{{app.currency}}<%} %></p>
+  </div>
+  <div class="col-sm-6">
+    <p><strong>Amount</strong></p>
+    <p><% if(app.hasValue('amount')){%>{{app.amount}}<%} %></p>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <p><strong>Your email address</strong></p>
+    <p><% if(app.hasValue('email')){%>{{app.email}}<%} %></p> 
+  </div>
+
+<h2><span class="fa fa-credit-card fa-cc-{{app.cc_field.cardtype}}" id="credit-card-type"></span> Payment Method</h2>
+<div class="row">
+  <div class="col-sm-12">
+  <div class="form-group">
+    <p><strong>Card number</strong></p>
+    <p><% if(app.hasValue('ccnumber')){%>{{app.ccnumber.substring(0,4)}} XXXX XXXX XXXX<%} %></p>  
+  </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-7">
+  <div class="form-group">
+    <p><strong>Name on card</strong></p>
+    <p><% if(app.hasValue('ccname')){%>{{app.ccname}}<%} %> </p> 
+  </div>
+  </div>
+  <div class="col-sm-3 col-xs-6">
+  <div class="form-group">
+    <p><strong>Expiry Date</strong></p>
+    <p><% if(app.hasValue('ccexpiry')){%>{{app.ccexpiry}}<%} %> </p> 
+  </div>
+  </div>
+  <div class="col-sm-2 col-xs-6">
+  <div class="form-group">
+    <p><strong>CVV Code</strong></p>
+    <p>XXX</p> 
+  </div>
+  </div>
+</div>
+
+
+<hr/>
+
+<p><a href="#" class="btn btn-primary">Exit <span class="glyphicon glyphicon-remove"></span></a></p>
+
+</script>
+
+<script type="text/template" id="page4">
+<h2>Terms and Conditions</h2>
+<p>All payments of APNIC invoices using the online credit card facilities are subject to the following conditions.</p>
+
+<ol>
+  <li>APNIC accepts the following cards:<br>
+
+    <ul>
+      <li>American Express</li>
+
+      <li>Diners Club (AU dollars only)</li>
+
+      <li>JCB (AU dollars only)</li>
+
+      <li>MasterCard</li>
+
+      <li>Visa</li>
+    </ul>APNIC does not accept:
+
+    <ul>
+      <li>EFTPOS</li>
+
+      <li>Other debit cards.<br><br></li>
+    </ul></li>
+
+  <li>When you complete the online payment form, funds will be deducted from your credit card in the selected currency.<br><br></li>
+
+  <li>Due to the way transactions are processed by the external banking sites, there may be delays of 1-3 days in updating your payment in APNIC's records.<br><br></li>
+
+  <li>Payments are debited to APNIC Pty Ltd.<br><br></li>
+
+  <li>Credit card payments are secure:
+
+    <ul>
+      <li>Payments will be processed directly by the National Australia Bank (AU dollar transactions) using Secure Socket Layer (SSL) technology.</li>
+
+      <li>Credit card numbers are protected with a high level of encryption when transmitted over the Internet.</li>
+
+      <li>APNIC does not have access to your credit card details.</li>
+    </ul><br></li>
+
+  <li>Confirmation:
+
+    <ul>
+      <li>If successful, the National Australia Bank will confirm that your payment was completed.</li>
+
+      <li>If unsuccessful, the National Australia Bank will advise that your payment has failed. APNIC will not be advised why a payment has failed, therefore, you should contact your credit card provider for details.</li>
+
+      <li>If your payment fails, please use one of the other payment methods described on your invoice, to pay your invoice. Please arrange an alternative payment method promptly to ensure continuous use of APNIC services and Internet resources.</li>
+    </ul><br></li>
+
+  <li>APNIC will confirm your payment details via email.<br><br></li>
+
+  <li>By using APNIC's online credit card facilities you agree to all applicable APNIC policies relating to your Internet resources.<br><br></li>
+
+  <li>All information you provide on the credit card payment facility forms will be handled in accordance with the APNIC privacy statement.<br><br></li>
+
+  <li>APNIC's Terms and Conditions for online credit card payments are subject to change at any time. Each transaction shall be subject to the specific Terms and Conditions that were in place at the time of the transaction.</li>
+</ol>
+
+
+
+<hr/>
+
+<p><a href="#" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span>Back</a></p>
+</script>
+<script type="text/template" id="page5">
+<h2>CVV (Card Verification Value) Number</h2>
+The <strong>CVV Number</strong> ("<b>C</b>ard <b>V</b>erification <b>V</b>alue") on your credit card or debit card is a 3 digit number on VISA®, MasterCard® and Discover® branded credit and debit cards.  On your American Express® branded credit or debit card it is a 4 digit numeric code.</p>
+
+<p>Your CVV number can be located by looking on your credit or debit card, as illustrated in the image shown:</p>
+<img src="custom/img/cvvnumber.png" alt="CVV Number" class="pull-right"/>
+
+<p>Providing your CVV number to an online merchant proves that you actually have the physical credit or debit card - and helps to keep you safe while reducing fraud.</p>
+
+<p><strong>CVV numbers</strong> are NOT your card's secret <b>PIN</b> (<b>P</b>ersonal <b>I</b>dentification <b>N</b>umber).</p>
+<p>You should <u>never</u> enter your PIN number when asked to provide your <b>CVV</b>. (PIN numbers allow you to use your credit or debit card at an ATM or when making an in-person purchase with your debit card or a cash advance with any credit card.)</p>
+
+<p><b>CVV</b> numbers are also known as <b>CSC numbers</b> ("Card Security Code"), as well as <b>CVV2 numbers</b>, which are the same as CVV numbers, except that they have been generated by a 2nd generation process that makes them harder to "guess".</p>
+<hr/>
+<p><a href="#" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span>Back</a></p>
+</script>
+<script type="text/template" id="page6">
+<h2><em>Whoops!</em></h2>
+<p>Sorry, an error has occured. Your payment may not have been processed.</p>
+<p>Please contact <a href="https://www.apnic.net/helpdesk" target="_blank">APNIC Helpdesk</a>.</p>
+</script>
+<!-- ######################## templates end here ######################## -->
+
+<!-- ######################## demo app starts here ###################### -->
+<script src="https://cgi1.apnic.net/assets/lib/js/backbone-min.js"></script>
+<script src="https://cgi1.apnic.net/assets/lib/js/jquery/jquery.creditCardValidator.js"></script>
+<script src="https://cgi1.apnic.net/assets/apnic/js/apps/pay.js"></script>
+<!-- ######################## demo app ends here ######################## -->
+
+    </body>
+</html>

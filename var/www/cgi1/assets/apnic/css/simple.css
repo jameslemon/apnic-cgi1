@@ -151,6 +151,19 @@ h1{
     font-style: normal;
 }
 
+.theme-orange h1{
+    color: #ef3a01;
+}
+.theme-darkgreen h1{
+    color: #166813;
+}
+.theme-purple h1{
+    color: #5f175b;
+}
+.theme-lightgreen h1{
+    color: #6a9703;
+}
+
 
 #footer{
     margin-bottom:1em;
