@@ -344,7 +344,7 @@
               cc_field.$div.removeClass('has-success has-feedback');
               cc_field.$validmarker.removeClass('glyphicon glyphicon-ok form-control-feedback');
           }
-      });
+      },{ accept : ['amex', 'diners_club_carte_blanche', 'diners_club_international', 'mastercard', 'jcb', 'laser', 'maestro', 'visa', 'visa_electron'] });
       $('#expiryDate').bind('input propertychange', function() {
           app.ccexpiry = $(this).val();
           var $parent = $(this).parent();

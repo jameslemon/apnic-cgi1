@@ -9,3 +9,4 @@ var/www/cgi1/json/training/*.json
 *[Tt]humbs.db
 *.Trashes
  
+*.swp
